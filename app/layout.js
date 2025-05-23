@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 
+import { StackProvider, StackTheme } from "@stackframe/stack";
+import { stackServerApp } from "../stack";
 import "./globals.css";
 import ConvexClientProvider from "./ConvexClientProvider";
 
@@ -24,7 +26,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ConvexClientProvider>{children}</ConvexClientProvider>
+        <StackProvider app={stackServerApp}>
+          <StackTheme>
+            <ConvexClientProvider>{children}</ConvexClientProvider>
+          </StackTheme>
+        </StackProvider>
       </body>
     </html>
   );
