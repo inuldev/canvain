@@ -1,7 +1,11 @@
-import React from "react";
+import IntroOptions from "./_components/IntroOptions";
 
 function Workspace() {
-  return <div>Workspace</div>;
+  return (
+    <div className="p-10 w-full">
+      <IntroOptions />
+    </div>
+  );
 }
 
 export default Workspace;
