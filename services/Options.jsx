@@ -3,6 +3,13 @@ import {
   Home,
   LayoutDashboardIcon,
   WalletCardsIcon,
+  LayoutTemplate,
+  ShapesIcon,
+  Image,
+  Type,
+  Sparkle,
+  Component,
+  Settings,
 } from "lucide-react";
 
 export const WorkspaceMenu = [
@@ -94,5 +101,43 @@ export const canvasSizeOptions = [
     width: 467,
     height: 700,
     icon: "/pinterest.png",
+  },
+];
+
+export const sideBarMenu = [
+  {
+    name: "Template",
+    desc: "Pilih template desain yang ingin digunakan",
+    icon: LayoutTemplate,
+  },
+  {
+    name: "Elemen",
+    desc: "Pilih elemen desain yang ingin digunakan",
+    icon: ShapesIcon,
+  },
+  {
+    name: "Gambar",
+    desc: "Tambahkan gambar atau upload gambar sendiri",
+    icon: Image,
+  },
+  {
+    name: "Teks",
+    desc: "Tambahkan teks ke desain anda",
+    icon: Type,
+  },
+  {
+    name: "AI",
+    desc: "Transformasi desain anda dengan AI",
+    icon: Sparkle,
+  },
+  {
+    name: "Background",
+    desc: "Tambahkan background ke desain anda",
+    icon: Component,
+  },
+  {
+    name: "Setelan",
+    desc: "Atur setelan desain anda",
+    icon: Settings,
   },
 ];

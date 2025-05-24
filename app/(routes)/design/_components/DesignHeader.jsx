@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 function DesignHeader({ DesignInfo }) {
   return (
-    <div className="p-3 flex justify-between bg-gradient-to-r from-purple-700 via-blue-400 to-sky-600">
+    <div className="p-2 flex justify-between items-center bg-gradient-to-r from-purple-700 via-blue-400 to-sky-600">
       <Link href={"/workspace"}>
         <Image src={"/logo.png"} alt="logo" width={100} height={60} />
       </Link>

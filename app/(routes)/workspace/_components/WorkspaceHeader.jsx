@@ -4,14 +4,8 @@ import { UserButton } from "@stackframe/stack";
 
 function WorkspaceHeader() {
   return (
-    <div className="p-2 px-4 flex justify-between items-center shadow-sm">
-      <Image
-        src={"/logo.png"}
-        alt="logo"
-        width={100}
-        height={100}
-        className="w-[100px] h-[40px]"
-      />
+    <div className="p-2 flex justify-between items-center bg-gradient-to-r from-purple-700 via-blue-400 to-sky-600">
+      <Image src={"/logo.png"} alt="logo" width={100} height={60} />
       <UserButton />
     </div>
   );

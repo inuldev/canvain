@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 
 import { api } from "@/convex/_generated/api";
 
+import SideBar from "../_components/SideBar";
 import DesignHeader from "../_components/DesignHeader";
 
 function DesignEditor() {
@@ -16,6 +17,9 @@ function DesignEditor() {
   return (
     <div>
       <DesignHeader DesignInfo={DesignInfo} />
+      <div className="flex">
+        <SideBar />
+      </div>
     </div>
   );
 }
