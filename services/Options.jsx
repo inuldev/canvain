@@ -12,6 +12,8 @@ import {
   Settings,
 } from "lucide-react";
 
+import BackgroundSetting from "./Components/BackgroundSetting";
+
 export const WorkspaceMenu = [
   {
     name: "Beranda",
@@ -134,6 +136,7 @@ export const sideBarMenu = [
     name: "Background",
     desc: "Tambahkan background ke desain anda",
     icon: Component,
+    component: <BackgroundSetting />,
   },
   {
     name: "Setelan",
