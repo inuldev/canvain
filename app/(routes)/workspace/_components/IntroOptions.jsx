@@ -1,10 +1,36 @@
 "use client";
 
 import Image from "next/image";
+import { toast } from "sonner";
+import { useContext } from "react";
+import { useMutation } from "convex/react";
+import { useRouter } from "next/navigation";
 
+import { api } from "@/convex/_generated/api";
 import { canvasSizeOptions } from "@/services/Options";
+import { UserDetailContext } from "@/context/UserDetailContext";
 
 function IntroOptions() {
+  const router = useRouter();
+  const { userDetail } = useContext(UserDetailContext);
+  const createDesignRecord = useMutation(api.designs.CreateNewDesign);
+
+  /**
+   * Membuat desain baru dan simpan ke database
+   * @param {*} option
+   */
+  const OnCanvasOptionSelect = async (option) => {
+    toast("Membuat desain baru...");
+    const result = await createDesignRecord({
+      name: option.name,
+      width: option.width,
+      height: option.height,
+      uid: userDetail?._id,
+    });
+
+    router.push("/design/" + result);
+  };
+
   return (
     <div>
       <div className="relative">
@@ -24,6 +50,7 @@ function IntroOptions() {
           <div
             key={index}
             className="flex flex-col items-center cursor-pointer"
+            onClick={() => OnCanvasOptionSelect(option)}
           >
             <Image
               src={option.icon}

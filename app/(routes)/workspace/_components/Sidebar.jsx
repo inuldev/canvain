@@ -5,16 +5,20 @@ import { usePathname, useRouter } from "next/navigation";
 
 import { WorkspaceMenu } from "@/services/Options";
 
+import CustomCanvasDialog from "./CustomCanvasDialog";
+
 function Sidebar() {
   const path = usePathname();
   const router = useRouter();
 
   return (
-    <div className="h-screen shadow-sm p-2 bg-purple-50 w-40">
-      <div className="p-2 flex items-center flex-col hover:cursor-pointer mb-5">
-        <CirclePlus className="bg-purple-600 text-white rounded-full h-8 w-8" />
-        <h2 className="text-sm text-purple-600">Buat Baru</h2>
-      </div>
+    <div className="h-screen shadow-sm p-2 bg-purple-50">
+      <CustomCanvasDialog>
+        <div className="p-2 flex items-center flex-col hover:cursor-pointer mb-5">
+          <CirclePlus className="bg-purple-600 text-white rounded-full h-8 w-8" />
+          <h2 className="text-sm text-purple-600">Buat Baru</h2>
+        </div>
+      </CustomCanvasDialog>
 
       {WorkspaceMenu.map((menu, index) => (
         <div

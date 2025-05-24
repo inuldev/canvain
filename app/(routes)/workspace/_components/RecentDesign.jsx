@@ -5,6 +5,8 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 
+import CustomCanvasDialog from "./CustomCanvasDialog";
+
 function RecentDesign() {
   const [designList, setDesignList] = useState([]);
 
@@ -18,7 +20,9 @@ function RecentDesign() {
           <h2 className="text-center">
             Tidak ada desain yang dibuat, silahkan buat desain baru!
           </h2>
-          <Button>+ Buat Desain Baru</Button>
+          <CustomCanvasDialog>
+            <Button>+ Buat Desain Baru</Button>
+          </CustomCanvasDialog>
         </div>
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 mt-5">
